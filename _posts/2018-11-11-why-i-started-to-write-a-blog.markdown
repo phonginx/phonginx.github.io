@@ -11,6 +11,6 @@ As a developer I will demonstrate that reason.
 def to_do(thing)
   puts "Will do, #{thing}"
 end
-print_hi('Blog writing')
-print_hi('Knowledge sharing')
+to_do('Blog writing')
+to_do('Knowledge sharing')
 {% endhighlight %}
