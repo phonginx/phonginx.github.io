@@ -1,8 +1,10 @@
 ---
 layout: post
 title:  "Don't break the chain"
+description: "Try to add a new link to a chain everyday and don’t break the chain."
 date:   2019-01-01 09:01:00 +0900
-categories: diary
+categories: journal
+tags: lifestyle
 ---
 
 Try to add a new link to a chain everyday and don't break the chain.

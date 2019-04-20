@@ -1,8 +1,10 @@
 ---
 layout: post
 title:  "Becoming a Minimalist"
+description: "About my problem and how minimalism is a solution"
 date:   2019-04-20 09:01:00 +0900
-categories: lifestyle
+categories: journal
+tags: lifestyle minimalism pdca
 ---
 # Problem
 Every morning I wake up then be so frustrated with my messed-up house (life). Day-to-day, I have bought [many things](/tools/#devices) which I barely use. I have heard about minimalism before, it's awesome, cool but I never think about trying it.
