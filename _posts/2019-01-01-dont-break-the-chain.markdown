@@ -4,6 +4,9 @@ title:  "Don't break the chain"
 date:   2019-01-01 05:00:00 +0900
 categories: diary
 ---
+
+Try to add a new link to a chain everyday and don't break the chain.
+
 {% highlight ruby %}
 # A chain is initialized here
 $chain = []
