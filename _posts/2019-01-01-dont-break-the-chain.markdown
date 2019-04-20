@@ -19,7 +19,16 @@ end
 # Define a job to execute every day
 job_type :add_link_to_the_chain, '/usr/local/bin/add_link_to_the_chain :task :fun_level'
 
-every :day do
-  add([Date.today, "X"])
+every :day
+  # you can choose taking action or do nothing
+  if action == "yes"
+    add("X")
+  else
+    add(" ")
+  end
 end
+
+puts($chain.join(""))
+# The result as you see the chain is not broken if you take action everyday
+# XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 {% endhighlight %}
