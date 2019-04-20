@@ -20,6 +20,6 @@ end
 job_type :add_link_to_the_chain, '/usr/local/bin/add_link_to_the_chain :task :fun_level'
 
 every :day do
-  add([Date.today, "Done"])
+  add([Date.today, "X"])
 end
 {% endhighlight %}
