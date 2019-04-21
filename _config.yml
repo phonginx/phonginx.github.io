@@ -30,6 +30,12 @@ google_analytics: UA-105674288-1
 tag_page_layout: tag_page
 tag_page_dir: tag
 
+# Disqus Comments
+disqus:
+    # Leave shortname blank to disable comments site-wide.
+    # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
+    shortname: phong
+
 # Build settings
 markdown: kramdown
 theme: minima
