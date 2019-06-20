@@ -7,4 +7,4 @@ categories: illutrator
 tags: photoshop
 ---
 
-![alt text](https://github.com/phonginx/phonginx.github.io/blob/master/assets/img/the_null_pointer.jpg "The null pointer exception")
+![alt text](https://github.com/phonginx/phonginx.github.io/blob/master/assets/img/the_null_pointer.jpg?raw=true "The null pointer exception")
