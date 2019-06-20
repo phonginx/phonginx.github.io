@@ -7,4 +7,4 @@ categories: illutrator
 tags: photoshop
 ---
 
-![The null pointer exception](/assets/img/the_null_pointer.jpg "The null pointer exception")
+![The null pointer exception](/assets/img/the_null_pointer_exception.png "The null pointer exception")
