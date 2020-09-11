@@ -28,6 +28,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i -g notablog
     - run: notablog generate .
+    - name: Move public files to docs folder
+      run: cp -r public docs
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
