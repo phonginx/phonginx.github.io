@@ -30,12 +30,13 @@ jobs:
     - run: notablog generate .
     - name: Commit files
       run: |
-        git config --local user.email "phonginx@gmail.com"
+        git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git pull
+        git pull origin master
         git add .
         git commit -m "Add changes" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: true
