@@ -29,7 +29,9 @@ jobs:
     - run: npm i -g notablog
     - run: notablog generate .
     - name: Move public files to docs folder
-      run: cp -r public docs
+      run: |
+       cp -r public/* docs
+       rm -rf public
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
