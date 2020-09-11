@@ -30,7 +30,7 @@ jobs:
     - run: notablog generate .
     - name: Commit files
       run: |
-        git config --local user.email "action@github.com"
+        git config --local user.email "phonginx@gmail.com"
         git config --local user.name "GitHub Action"
         git pull
         git add .
