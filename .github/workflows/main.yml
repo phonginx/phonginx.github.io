@@ -43,7 +43,8 @@ jobs:
           git add .
           # Default commit log message
           COMMIT_LOG="Add changes"
-          if [[ `${{ github.event.inputs.commit.log }}` ]]; then
+          echo "Commit Log Message: ${{ github.event.inputs.commit.log }}"
+          if [[ -z "${{ github.event.inputs.commit.log }}" ]]; then
             COMMIT_LOG=${{ github.event.inputs.commit.log }}
           fi
           git commit -m "$COMMIT_LOG" -a
