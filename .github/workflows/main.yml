@@ -6,7 +6,7 @@ on:
     - cron:  '0 0 * * *'
   workflow_dispatch:
     inputs:
-      commitLog:
+      commit_log:
         description: 'Commit Log Message'  
         required: false
         default: 'Add changes'
@@ -43,8 +43,11 @@ jobs:
         git pull origin master
         if [[ `git status --porcelain` ]]; then
           git add .
-          echo "Commit Log Message: ${INPUT_COMMITLOG}"
-          git commit -m "${INPUT_COMMITLOG}" -a
+          LOG_MSG="Add changes"
+          if [[ -z "${{ github.event.inputs.commit_log }}" ]]; then
+            LOG_MSG="${{ github.event.inputs.commit_log }}"
+          echo "Commit Log Message: $LOG_MSG"
+          git commit -m "$LOG_MSG" -a
         else
           echo "Nothing changed here"
         fi
