@@ -6,8 +6,10 @@ on:
     - cron:  '0 0 * * *'
   workflow_dispatch:
     inputs:
-      tags:
-        description: 'NotionUpdate'  
+      commit_log:
+        description: 'Commit Log Message'  
+        required: false
+        default: 'Add changes'
 jobs:
   build:
 
@@ -26,19 +28,31 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i -g notablog
-    - run: notablog generate .
-    - name: Move public files to docs folder
+    - name: Install notablog
+      run: npm i -g notablog
+    - name: Generate static files from notion url
+      run: notablog generate .
+    - name: Move public files to root folder
       run: |
        cp -r public/* .
        rm -rf public
-    - name: Commit files
+    - name: Check changed then commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git pull origin master
-        git add .
-        git commit -m "Add changes" -a
+        if [[ `git status --porcelain` ]]; then
+          git add .
+          LOG_MSG="Add changes"
+          if [[ -z "${{ github.event.inputs.commit_log }}" ]]; then
+            LOG_MSG="${{ github.event.inputs.commit_log }}"
+          fi
+          echo "Commit Log Message: $LOG_MSG"
+          git commit -m "$LOG_MSG" -a
+        else
+          echo "Nothing changed here"
+        fi
+ 
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
