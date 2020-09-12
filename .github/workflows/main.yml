@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Sync data from notion
 
 on:
   schedule:
