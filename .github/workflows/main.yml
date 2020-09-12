@@ -42,9 +42,9 @@ jobs:
         if [[ `git status --porcelain` ]]; then
           git add .
           # Default commit log message
-          COMMIT_LOG = "Add changes"
+          COMMIT_LOG=Add changes
           if [[ `${{ github.event.inputs.commit.log }}` ]]; then
-            COMMIT_LOG = ${{ github.event.inputs.commit.log }}
+            COMMIT_LOG=${{ github.event.inputs.commit.log }}
           fi
           git commit -m "$COMMIT_LOG" -a
         else
