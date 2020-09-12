@@ -37,8 +37,13 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git pull origin master
-        git add .
-        git commit -m "Add changes" -a
+        if [[ `git status --porcelain` ]]; then
+          git add .
+          git commit -m "Add changes" -a
+        else
+          echo "Nothing changed here"
+        fi
+ 
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
