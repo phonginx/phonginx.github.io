@@ -46,6 +46,7 @@ jobs:
           LOG_MSG="Add changes"
           if [[ -z "${{ github.event.inputs.commit_log }}" ]]; then
             LOG_MSG="${{ github.event.inputs.commit_log }}"
+          fi
           echo "Commit Log Message: $LOG_MSG"
           git commit -m "$LOG_MSG" -a
         else
